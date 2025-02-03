@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
 import './App.css';
-
+//2-masla
+const RegisterForm = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
+//3-masala
+const ContactForm = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
 // 1-masla
 const LoginForm = () => {
   const [email='akmaljanov.712', setEmail] = useState('');
@@ -109,13 +122,12 @@ const RegisterForm = () => {
         />
       </div>
       {error && <div className="error">{error}</div>}
-      <button type="submit">Ro'yxatdan
-const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
+      <button type="submit">Ro'yxatdan</button>
+    </form>
+  );
+};
 
+// 3-masala
   const handleSubmit = (event) => {
     event.preventDefault();
     if (message.length < 20) {
@@ -127,7 +139,6 @@ const ContactForm = () => {
       console.log('Xabar:', message);
     }
   };
-
   return (
     <form onSubmit={handleSubmit} className="form">
       <h2>3. Kontakt Formasi</h2>
@@ -170,5 +181,5 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
+};
+export default App;  
